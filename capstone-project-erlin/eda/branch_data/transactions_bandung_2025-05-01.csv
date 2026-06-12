@@ -1,0 +1,97 @@
+SKU_Category,SKU_ID,SKU,DiscountedPrice,Promo_Category,unit_sold
+Biskuit,S012,Nabati Biskuit Rasa Cokelat,4500.0,Promo Normal,10
+Biskuit,S012,Nabati Biskuit Rasa Cokelat,4800.0,Promo Normal,16
+Biskuit,S012,Nabati Biskuit Rasa Cokelat,5000.0,No Promo,22
+Biskuit,S012,Nabati Biskuit Rasa Cokelat,5000.0,Promo Bundling,5
+Biskuit,S011,Nabati Biskuit Rasa Kelapa,3500.0,Promo Seasonal High,5
+Biskuit,S011,Nabati Biskuit Rasa Kelapa,4500.0,Promo Normal,11
+Biskuit,S011,Nabati Biskuit Rasa Kelapa,4800.0,Promo Normal,5
+Biskuit,S011,Nabati Biskuit Rasa Kelapa,5000.0,No Promo,45
+Extruded Snack,S019,Richeese Siip Jagung Bakar 20g,2200.0,Promo Seasonal High,2
+Extruded Snack,S019,Richeese Siip Jagung Bakar 20g,2700.0,Promo Normal,7
+Extruded Snack,S019,Richeese Siip Jagung Bakar 20g,2800.0,Promo Normal,3
+Extruded Snack,S019,Richeese Siip Jagung Bakar 20g,3000.0,No Promo,34
+Extruded Snack,S007,Richeese Siip Keju 20g,2100.0,Promo Seasonal High,5
+Extruded Snack,S007,Richeese Siip Keju 20g,2200.0,Promo Seasonal High,4
+Extruded Snack,S007,Richeese Siip Keju 20g,2700.0,Promo Normal,6
+Extruded Snack,S007,Richeese Siip Keju 20g,2800.0,Promo Normal,6
+Extruded Snack,S007,Richeese Siip Keju 20g,3000.0,No Promo,20
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,3200.0,Promo Seasonal High,3
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,3600.0,Promo Seasonal High,1
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,4000.0,Promo Normal,8
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,4300.0,Promo Normal,11
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,4500.0,No Promo,29
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,4500.0,Promo Bundling,3
+Kue/Pie,S005,Nextar Brownies Pie 40g,6300.0,Promo Normal,16
+Kue/Pie,S005,Nextar Brownies Pie 40g,6600.0,Promo Normal,12
+Kue/Pie,S005,Nextar Brownies Pie 40g,7000.0,No Promo,31
+Kue/Pie,S017,Nextar Choco Delight 40g,4900.0,Promo Seasonal High,5
+Kue/Pie,S017,Nextar Choco Delight 40g,5200.0,Promo Seasonal High,2
+Kue/Pie,S017,Nextar Choco Delight 40g,5600.0,Promo Seasonal High,4
+Kue/Pie,S017,Nextar Choco Delight 40g,6300.0,Promo Normal,4
+Kue/Pie,S017,Nextar Choco Delight 40g,6600.0,Promo Normal,5
+Kue/Pie,S017,Nextar Choco Delight 40g,7000.0,No Promo,18
+Kue/Pie,S006,Nextar Nastar Pie 30g,5600.0,Promo Seasonal High,2
+Kue/Pie,S006,Nextar Nastar Pie 30g,6300.0,Promo Normal,7
+Kue/Pie,S006,Nextar Nastar Pie 30g,6600.0,Promo Normal,12
+Kue/Pie,S006,Nextar Nastar Pie 30g,7000.0,No Promo,42
+Kue/Pie,S006,Nextar Nastar Pie 30g,7000.0,Promo Bundling,5
+Kue/Pie,S018,Nextar Pineapple Pie 30g,4900.0,Promo Seasonal High,1
+Kue/Pie,S018,Nextar Pineapple Pie 30g,6300.0,Promo Normal,1
+Kue/Pie,S018,Nextar Pineapple Pie 30g,6600.0,Promo Normal,2
+Kue/Pie,S018,Nextar Pineapple Pie 30g,7000.0,No Promo,19
+Kue/Pie,S018,Nextar Pineapple Pie 30g,7000.0,Promo Bundling,4
+Mi Instan,S020,Richeese Mi Instan Goreng,2600.0,Promo Seasonal High,1
+Mi Instan,S020,Richeese Mi Instan Goreng,3200.0,Promo Normal,10
+Mi Instan,S020,Richeese Mi Instan Goreng,3300.0,Promo Normal,11
+Mi Instan,S020,Richeese Mi Instan Goreng,3500.0,No Promo,27
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,2400.0,Promo Seasonal High,3
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,3200.0,Promo Normal,4
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,3300.0,Promo Normal,3
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,3500.0,No Promo,26
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,3500.0,Promo Bundling,2
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,2800.0,Promo Seasonal High,7
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,3000.0,Promo Seasonal High,2
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,3200.0,Promo Seasonal High,2
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,3600.0,Promo Normal,11
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,3800.0,Promo Normal,8
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,4000.0,No Promo,14
+Minuman,S013,Nabati Drinko Richeese 150ml,2000.0,Promo Bundling,61
+Minuman,S013,Nabati Drinko Richeese 150ml,2800.0,Promo Seasonal High,5
+Minuman,S013,Nabati Drinko Richeese 150ml,3000.0,Promo Seasonal High,5
+Minuman,S013,Nabati Drinko Richeese 150ml,3200.0,Promo Seasonal High,2
+Minuman,S013,Nabati Drinko Richeese 150ml,3600.0,Promo Normal,18
+Minuman,S013,Nabati Drinko Richeese 150ml,3800.0,Promo Normal,8
+Minuman,S013,Nabati Drinko Richeese 150ml,4000.0,No Promo,18
+Minuman,S014,Nabati Drinko Richoco 150ml,2800.0,Promo Seasonal High,2
+Minuman,S014,Nabati Drinko Richoco 150ml,3000.0,Promo Seasonal High,5
+Minuman,S014,Nabati Drinko Richoco 150ml,3600.0,Promo Normal,11
+Minuman,S014,Nabati Drinko Richoco 150ml,3800.0,Promo Normal,2
+Minuman,S014,Nabati Drinko Richoco 150ml,4000.0,No Promo,37
+Wafer,S003,Richeese Wafer Keju 10g Renceng,7000.0,Promo Seasonal High,2
+Wafer,S003,Richeese Wafer Keju 10g Renceng,7500.0,Promo Seasonal High,5
+Wafer,S003,Richeese Wafer Keju 10g Renceng,8000.0,Promo Seasonal High,1
+Wafer,S003,Richeese Wafer Keju 10g Renceng,9000.0,Promo Normal,12
+Wafer,S003,Richeese Wafer Keju 10g Renceng,9500.0,Promo Normal,5
+Wafer,S003,Richeese Wafer Keju 10g Renceng,10000.0,No Promo,18
+Wafer,S003,Richeese Wafer Keju 10g Renceng,10000.0,Promo Bundling,3
+Wafer,S001,Richeese Wafer Keju 50g,4100.0,Promo Seasonal High,4
+Wafer,S001,Richeese Wafer Keju 50g,5000.0,Promo Normal,6
+Wafer,S001,Richeese Wafer Keju 50g,5200.0,Promo Bundling,45
+Wafer,S001,Richeese Wafer Keju 50g,5200.0,Promo Normal,11
+Wafer,S001,Richeese Wafer Keju 50g,5500.0,No Promo,31
+Wafer,S015,Richeese Wafer Pink Lava 50g,5000.0,Promo Normal,6
+Wafer,S015,Richeese Wafer Pink Lava 50g,5200.0,Promo Normal,4
+Wafer,S015,Richeese Wafer Pink Lava 50g,5500.0,No Promo,14
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,7500.0,Promo Seasonal High,2
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,8000.0,Promo Seasonal High,3
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,9000.0,Promo Normal,7
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,9500.0,Promo Normal,9
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,10000.0,No Promo,35
+Wafer,S002,Richoco Wafer Cokelat 50g,4100.0,Promo Seasonal High,8
+Wafer,S002,Richoco Wafer Cokelat 50g,5000.0,Promo Normal,8
+Wafer,S002,Richoco Wafer Cokelat 50g,5500.0,No Promo,20
+Wafer,S016,Richoco Wafer Hazelnut 50g,4800.0,Promo Seasonal High,9
+Wafer,S016,Richoco Wafer Hazelnut 50g,5400.0,Promo Normal,5
+Wafer,S016,Richoco Wafer Hazelnut 50g,5700.0,Promo Normal,3
+Wafer,S016,Richoco Wafer Hazelnut 50g,6000.0,No Promo,32

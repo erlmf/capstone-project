@@ -1,0 +1,59 @@
+SKU_Category,SKU_A,SKU_A_Name,Brand_A,SKU_B,SKU_B_Name,Brand_B,coef_disc_A,p_value,r_squared,n_obs,cv_disc_A,skew,norm_flag,hetero_flag,cv_flag,reliability,verdict
+Biskuit,S011,Nabati Biskuit Rasa Kelapa,Richeese,S012,Nabati Biskuit Rasa Cokelat,Richoco,0.5644,0.0,0.8512,2924,351.28,-0.157,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Biskuit,S012,Nabati Biskuit Rasa Cokelat,Richoco,S011,Nabati Biskuit Rasa Kelapa,Richeese,-0.6774,0.0,0.8623,2924,366.08,-0.199,PASS,PASS,PASS,RELIABLE,CANNIBALIZATION
+Extruded Snack,S007,Richeese Siip Keju 20g,Richeese,S008,Richoco Ahh! Extruded 15g,Richoco,-0.8445,0.0,0.8507,2924,408.33,-0.212,PASS,WARN: p=0.001,PASS,UNRELIABLE,CANNIBALIZATION
+Extruded Snack,S007,Richeese Siip Keju 20g,Richeese,S019,Richeese Siip Jagung Bakar 20g,Richeese,-0.5683,0.0,0.8601,2924,408.33,-0.277,PASS,WARN: p=0.003,PASS,UNRELIABLE,CANNIBALIZATION
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,Richoco,S007,Richeese Siip Keju 20g,Richeese,-0.9773,0.0,0.8515,2924,418.19,-0.179,PASS,WARN: p=0.001,PASS,UNRELIABLE,CANNIBALIZATION
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,Richoco,S019,Richeese Siip Jagung Bakar 20g,Richeese,-0.5125,0.0,0.8598,2924,418.19,-0.258,PASS,PASS,PASS,RELIABLE,CANNIBALIZATION
+Extruded Snack,S019,Richeese Siip Jagung Bakar 20g,Richeese,S007,Richeese Siip Keju 20g,Richeese,1.0364,0.0,0.8526,2924,378.43,-0.178,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Extruded Snack,S019,Richeese Siip Jagung Bakar 20g,Richeese,S008,Richoco Ahh! Extruded 15g,Richoco,1.1099,0.0,0.8533,2924,378.43,-0.225,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S005,Nextar Brownies Pie 40g,Nextar,S006,Nextar Nastar Pie 30g,Nextar,1.1703,0.0,0.8661,2924,383.97,-0.152,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S005,Nextar Brownies Pie 40g,Nextar,S017,Nextar Choco Delight 40g,Nextar,0.6169,0.0,0.8671,2924,383.97,-0.231,PASS,WARN: p=0.001,PASS,UNRELIABLE,KOMPLEMEN
+Kue/Pie,S005,Nextar Brownies Pie 40g,Nextar,S018,Nextar Pineapple Pie 30g,Nextar,0.4272,0.0016,0.8583,2924,383.97,-0.225,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S006,Nextar Nastar Pie 30g,Nextar,S005,Nextar Brownies Pie 40g,Nextar,1.1118,0.0,0.8615,2924,383.97,-0.166,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S006,Nextar Nastar Pie 30g,Nextar,S017,Nextar Choco Delight 40g,Nextar,0.6169,0.0,0.8671,2924,383.97,-0.231,PASS,WARN: p=0.001,PASS,UNRELIABLE,KOMPLEMEN
+Kue/Pie,S006,Nextar Nastar Pie 30g,Nextar,S018,Nextar Pineapple Pie 30g,Nextar,0.4272,0.0016,0.8583,2924,383.97,-0.225,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S017,Nextar Choco Delight 40g,Nextar,S005,Nextar Brownies Pie 40g,Nextar,0.5324,0.0,0.863,2924,370.09,-0.186,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S017,Nextar Choco Delight 40g,Nextar,S006,Nextar Nastar Pie 30g,Nextar,0.5205,0.0,0.8676,2924,370.09,-0.182,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S017,Nextar Choco Delight 40g,Nextar,S018,Nextar Pineapple Pie 30g,Nextar,0.6105,0.0,0.8596,2924,370.09,-0.255,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S018,Nextar Pineapple Pie 30g,Nextar,S005,Nextar Brownies Pie 40g,Nextar,0.4079,0.0023,0.8619,2924,370.09,-0.174,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S018,Nextar Pineapple Pie 30g,Nextar,S006,Nextar Nastar Pie 30g,Nextar,0.3365,0.0103,0.8664,2924,370.09,-0.16,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Kue/Pie,S018,Nextar Pineapple Pie 30g,Nextar,S017,Nextar Choco Delight 40g,Nextar,0.5608,0.0,0.8665,2924,370.09,-0.234,PASS,WARN: p=0.000,PASS,UNRELIABLE,KOMPLEMEN
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,Richeese,S010,Richeese Mi Instan Ramen Keju,Richeese,0.0365,0.6338,0.8537,2924,324.08,-0.177,PASS,WARN: p=0.002,PASS,UNRELIABLE,Tidak Signifikan
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,Richeese,S020,Richeese Mi Instan Goreng,Richeese,0.0728,0.3518,0.8489,2924,324.08,-0.167,PASS,WARN: p=0.001,PASS,UNRELIABLE,Tidak Signifikan
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,Richeese,S009,Richeese Mi Instan Keju Pedas,Richeese,-0.4587,0.0,0.8478,2924,401.94,-0.267,PASS,WARN: p=0.000,PASS,UNRELIABLE,CANNIBALIZATION
+Mi Instan,S010,Richeese Mi Instan Ramen Keju,Richeese,S020,Richeese Mi Instan Goreng,Richeese,-0.2927,0.005,0.8492,2924,401.94,-0.184,PASS,WARN: p=0.000,PASS,UNRELIABLE,CANNIBALIZATION
+Mi Instan,S020,Richeese Mi Instan Goreng,Richeese,S009,Richeese Mi Instan Keju Pedas,Richeese,-0.7704,0.0,0.8496,2924,401.94,-0.252,PASS,WARN: p=0.004,PASS,UNRELIABLE,CANNIBALIZATION
+Mi Instan,S020,Richeese Mi Instan Goreng,Richeese,S010,Richeese Mi Instan Ramen Keju,Richeese,-0.635,0.0,0.8556,2924,401.94,-0.202,PASS,WARN: p=0.000,PASS,UNRELIABLE,CANNIBALIZATION
+Minuman,S013,Nabati Drinko Richeese 150ml,Richeese,S014,Nabati Drinko Richoco 150ml,Richoco,-0.0668,0.0384,0.853,2924,280.39,-0.078,PASS,WARN: p=0.000,PASS,UNRELIABLE,CANNIBALIZATION
+Minuman,S014,Nabati Drinko Richoco 150ml,Richoco,S013,Nabati Drinko Richeese 150ml,Richeese,-0.1267,0.2308,0.8543,2924,331.04,-0.182,PASS,WARN: p=0.000,PASS,UNRELIABLE,Tidak Signifikan
+Wafer,S001,Richeese Wafer Keju 50g,Richeese,S002,Richoco Wafer Cokelat 50g,Richoco,0.2883,0.0001,0.8612,2924,299.83,-0.279,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S001,Richeese Wafer Keju 50g,Richeese,S003,Richeese Wafer Keju 10g Renceng,Richeese,0.844,0.0,0.8548,2924,299.83,-0.25,PASS,WARN: p=0.000,PASS,UNRELIABLE,KOMPLEMEN
+Wafer,S001,Richeese Wafer Keju 50g,Richeese,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,0.6923,0.0,0.8562,2924,299.83,-0.236,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S001,Richeese Wafer Keju 50g,Richeese,S015,Richeese Wafer Pink Lava 50g,Richeese,0.2974,0.0001,0.8518,2924,299.83,-0.118,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S001,Richeese Wafer Keju 50g,Richeese,S016,Richoco Wafer Hazelnut 50g,Richoco,0.6242,0.0,0.8531,2924,299.83,-0.321,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S002,Richoco Wafer Cokelat 50g,Richoco,S001,Richeese Wafer Keju 50g,Richeese,0.5559,0.0,0.848,2924,351.87,-0.387,PASS,WARN: p=0.001,PASS,UNRELIABLE,KOMPLEMEN
+Wafer,S002,Richoco Wafer Cokelat 50g,Richoco,S003,Richeese Wafer Keju 10g Renceng,Richeese,0.8754,0.0,0.8542,2924,351.87,-0.269,PASS,WARN: p=0.000,PASS,UNRELIABLE,KOMPLEMEN
+Wafer,S002,Richoco Wafer Cokelat 50g,Richoco,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,0.9643,0.0,0.8588,2924,351.87,-0.254,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S002,Richoco Wafer Cokelat 50g,Richoco,S015,Richeese Wafer Pink Lava 50g,Richeese,0.8916,0.0,0.8567,2924,351.87,-0.142,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S002,Richoco Wafer Cokelat 50g,Richoco,S016,Richoco Wafer Hazelnut 50g,Richoco,0.8573,0.0,0.855,2924,351.87,-0.336,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S003,Richeese Wafer Keju 10g Renceng,Richeese,S001,Richeese Wafer Keju 50g,Richeese,0.641,0.0,0.8492,2924,337.47,-0.319,PASS,WARN: p=0.000,PASS,UNRELIABLE,KOMPLEMEN
+Wafer,S003,Richeese Wafer Keju 10g Renceng,Richeese,S002,Richoco Wafer Cokelat 50g,Richoco,0.5637,0.0,0.8631,2924,337.47,-0.262,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S003,Richeese Wafer Keju 10g Renceng,Richeese,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,0.134,0.0865,0.8523,2924,337.47,-0.202,PASS,PASS,PASS,RELIABLE,Tidak Signifikan
+Wafer,S003,Richeese Wafer Keju 10g Renceng,Richeese,S015,Richeese Wafer Pink Lava 50g,Richeese,0.6151,0.0,0.8542,2924,337.47,-0.084,PASS,WARN: p=0.000,PASS,UNRELIABLE,KOMPLEMEN
+Wafer,S003,Richeese Wafer Keju 10g Renceng,Richeese,S016,Richoco Wafer Hazelnut 50g,Richoco,0.5316,0.0,0.8521,2924,337.47,-0.288,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,S001,Richeese Wafer Keju 50g,Richeese,-0.1068,0.2001,0.846,2924,343.74,-0.365,PASS,WARN: p=0.001,PASS,UNRELIABLE,Tidak Signifikan
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,S002,Richoco Wafer Cokelat 50g,Richoco,-0.0901,0.2436,0.8605,2924,343.74,-0.268,PASS,PASS,PASS,RELIABLE,Tidak Signifikan
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,S003,Richeese Wafer Keju 10g Renceng,Richeese,-0.5327,0.0,0.8511,2924,343.74,-0.208,PASS,WARN: p=0.000,PASS,UNRELIABLE,CANNIBALIZATION
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,S015,Richeese Wafer Pink Lava 50g,Richeese,-0.2874,0.0005,0.8517,2924,343.74,-0.12,PASS,WARN: p=0.002,PASS,UNRELIABLE,CANNIBALIZATION
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,S016,Richoco Wafer Hazelnut 50g,Richoco,-0.2513,0.0019,0.8503,2924,343.74,-0.308,PASS,PASS,PASS,RELIABLE,CANNIBALIZATION
+Wafer,S015,Richeese Wafer Pink Lava 50g,Richeese,S001,Richeese Wafer Keju 50g,Richeese,-0.3724,0.0,0.847,2924,317.79,-0.374,PASS,WARN: p=0.004,PASS,UNRELIABLE,CANNIBALIZATION
+Wafer,S015,Richeese Wafer Pink Lava 50g,Richeese,S002,Richoco Wafer Cokelat 50g,Richoco,0.1222,0.1068,0.8606,2924,317.79,-0.26,PASS,PASS,PASS,RELIABLE,Tidak Signifikan
+Wafer,S015,Richeese Wafer Pink Lava 50g,Richeese,S003,Richeese Wafer Keju 10g Renceng,Richeese,-0.3246,0.0,0.8497,2924,317.79,-0.211,PASS,WARN: p=0.000,PASS,UNRELIABLE,CANNIBALIZATION
+Wafer,S015,Richeese Wafer Pink Lava 50g,Richeese,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,-0.1357,0.0904,0.8523,2924,317.79,-0.214,PASS,PASS,PASS,RELIABLE,Tidak Signifikan
+Wafer,S015,Richeese Wafer Pink Lava 50g,Richeese,S016,Richoco Wafer Hazelnut 50g,Richoco,-0.0758,0.3395,0.8498,2924,317.79,-0.297,PASS,PASS,PASS,RELIABLE,Tidak Signifikan
+Wafer,S016,Richoco Wafer Hazelnut 50g,Richoco,S001,Richeese Wafer Keju 50g,Richeese,0.8752,0.0,0.8522,2924,311.75,-0.412,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S016,Richoco Wafer Hazelnut 50g,Richoco,S002,Richoco Wafer Cokelat 50g,Richoco,0.3371,0.0,0.8615,2924,311.75,-0.257,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S016,Richoco Wafer Hazelnut 50g,Richoco,S003,Richeese Wafer Keju 10g Renceng,Richeese,0.3236,0.0,0.8497,2924,311.75,-0.194,PASS,WARN: p=0.000,PASS,UNRELIABLE,KOMPLEMEN
+Wafer,S016,Richoco Wafer Hazelnut 50g,Richoco,S004,Richoco Wafer Cokelat 10g Renceng,Richoco,0.3432,0.0,0.8531,2924,311.75,-0.208,PASS,PASS,PASS,RELIABLE,KOMPLEMEN
+Wafer,S016,Richoco Wafer Hazelnut 50g,Richoco,S015,Richeese Wafer Pink Lava 50g,Richeese,0.4198,0.0,0.8526,2924,311.75,-0.094,PASS,WARN: p=0.001,PASS,UNRELIABLE,KOMPLEMEN

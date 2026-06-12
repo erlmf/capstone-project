@@ -1,0 +1,9 @@
+SKU_Category,SKU_A,SKU_A_Name,SKU_B,SKU_B_Name,coef_disc_A,p_value,avg_daily_rev_B,pct_qty_change,daily_rev_impact
+Minuman,S014,Nabati Drinko Richoco 150ml,S013,Nabati Drinko Richeese 150ml,-0.1883,0.0,2048246.0,-1.88,-38568.0
+Extruded Snack,S007,Richeese Siip Keju 20g,S008,Richoco Ahh! Extruded 15g,-0.2315,0.0,1037675.0,-2.32,-24022.0
+Kue/Pie,S005,Nextar Brownies Pie 40g,S018,Nextar Pineapple Pie 30g,-0.1436,0.0,1671027.0,-1.44,-23996.0
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,S015,Richeese Wafer Pink Lava 50g,-0.1804,0.0,1286287.0,-1.8,-23205.0
+Wafer,S001,Richeese Wafer Keju 50g,S015,Richeese Wafer Pink Lava 50g,-0.1736,0.0,1286287.0,-1.74,-22330.0
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,S016,Richoco Wafer Hazelnut 50g,-0.132,0.0001,1448626.0,-1.32,-19122.0
+Extruded Snack,S007,Richeese Siip Keju 20g,S019,Richeese Siip Jagung Bakar 20g,-0.1551,0.0,681763.0,-1.55,-10574.0
+Mi Instan,S009,Richeese Mi Instan Keju Pedas,S010,Richeese Mi Instan Ramen Keju,-0.0822,0.0093,924123.0,-0.82,-7596.0

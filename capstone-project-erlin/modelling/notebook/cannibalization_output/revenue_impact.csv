@@ -1,0 +1,4 @@
+SKU_Category,SKU_A,SKU_A_Name,SKU_B,SKU_B_Name,coef_disc_A,p_value,avg_daily_rev_B,pct_qty_change,daily_rev_impact
+Biskuit,S012,Nabati Biskuit Rasa Cokelat,S011,Nabati Biskuit Rasa Kelapa,-0.6774,0.0,1225236.0,-6.77,-82998.0
+Extruded Snack,S008,Richoco Ahh! Extruded 15g,S019,Richeese Siip Jagung Bakar 20g,-0.5125,0.0,737280.0,-5.12,-37786.0
+Wafer,S004,Richoco Wafer Cokelat 10g Renceng,S016,Richoco Wafer Hazelnut 50g,-0.2513,0.0019,1501606.0,-2.51,-37735.0
