@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+*
+
+!*/
+
+!mapl_plus_step13.ipynb
+!mapl_plus_step13_eda.ipynb
