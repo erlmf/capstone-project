@@ -817,13 +817,13 @@ function AnalysisPage({ datasetId, onResult }) {
         <StatCard label="Total Pasangan" value={filteredSummary.total_pairs} />
         <StatCard label="Cannibalization" value={filteredSummary.significant_cannibalization} />
         <StatCard
-          label={<span className='text-red-500'>Revenue Loss</span>}
+          label="Revenue Loss"
           
           value={
             <span className="text-red-500">
               Rp{Math.abs(filteredSummary.total_revenue_at_risk ?? 0).toLocaleString('id-ID')}
             </span>}
-          accent
+          
         />
       </div>
 
@@ -1115,57 +1115,89 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
   return (
     <div className="space-y-6">
       <Card>
-        <h3 className="text-sm font-semibold text-brand-blue mb-4">Parameter Simulasi</h3>
-        <div className="grid grid-cols-3 gap-4 mb-4">
-          <div>
-            <label className="text-xs text-gray-400 mb-1 block">Branch</label>
-            <select value={selectedBranch} onChange={e => setSelectedBranch(e.target.value)} className="w-full border border-brand-sky/40 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sky">
-              {branchList.map(b => <option key={b} value={b}>{b === 'all' ? 'Semua Branch' : b}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="text-xs text-gray-400 mb-1 block">Produk</label>
-            <select value={selectedSku} onChange={e => setSelectedSku(e.target.value)} className="w-full border border-brand-sky/40 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sky">
-              {skuList.map(s => <option key={s.SKU_ID} value={s.SKU_ID}>{s.SKU_ID} — {s.SKU_Name}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="text-xs text-gray-400 mb-1 block">Diskon ({discountPct}%)</label>
-            <input type="range" min={0} max={70} step={1} value={discountPct} onChange={e => setDiscountPct(Number(e.target.value))} className="w-full mt-2" />
-            <div className="flex justify-between text-xs text-gray-400 mt-1"><span>0%</span><span>35%</span><span>70%</span></div>
-          </div>
-        </div>
-        <button onClick={run} disabled={loading || !selectedSku} className="bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition disabled:opacity-40">
-          {loading ? 'Menghitung...' : 'Jalankan Simulasi'}
-        </button>
-        {error && <p className="text-xs text-red-500 mt-3">{error}</p>}
-      </Card>
+      <div className="grid grid-cols-4 gap-6 items-start">
+          {/* Kiri 3/4 */}
+          <div className="col-span-3">
+            <h3 className="text-sm font-semibold text-brand-blue mb-4">
+              Parameter Simulasi
+            </h3>
 
-      {result && (
-        <>
-          <div className="grid grid-cols-4 gap-4">
-            <StatCard label="Revenue Generated"           value={fmt(result.sku_a_result.rev_uplift_daily)}   sub={`${result.sku_a_result.qty_uplift_pct > 0 ? '+' : ''}${result.sku_a_result.qty_uplift_pct}% Units Sold`} />
-            <StatCard label="Revenue Loss (Cannibalization)"  value={result.summary.total_rev_lost <= 0 ? `-Rp${Math.abs(result.summary.total_rev_lost).toLocaleString('id-ID')}` : `+Rp${result.summary.total_rev_lost.toLocaleString('id-ID')}`} sub={`${result.summary.n_sku_cannibalized} Produk terdampak`} />
-            <StatCard label="Net Revenue Impact"      value={fmt(result.summary.net_revenue_impact)} sub={result.summary.is_worth_it ? '✅ Worth it' : '⚠️ Tidak worth it'} accent={result.summary.is_worth_it} />
-            <StatCard
-              label="Break-even Discount"
-              value={
-                result.summary.always_worth_it
-                  ? '70%+'
-                  : result.summary.break_even_discount_pct != null
-                    ? `${result.summary.break_even_discount_pct}%`
-                    : '0%'
-              }
-              sub={
-                result.summary.always_worth_it
-                  ? 'Selalu worth it di range slider'
-                  : result.summary.break_even_discount_pct != null
-                    ? `Batas atas discount profitable`
-                    : 'Sudah rugi sejak discount terkecil'
-              }
-              accent={result.summary.always_worth_it || result.summary.break_even_discount_pct != null}
-            />
+            <div className="grid grid-cols-3 gap-4 mb-4">
+              <div>
+                <label className="text-xs text-gray-400 mb-1 block">Branch</label>
+                <select value={selectedBranch} onChange={e => setSelectedBranch(e.target.value)} className="w-full border border-brand-sky/40 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sky">
+                  {branchList.map(b => <option key={b} value={b}>{b === 'all' ? 'Semua Branch' : b}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="text-xs text-gray-400 mb-1 block">Produk</label>
+                <select value={selectedSku} onChange={e => setSelectedSku(e.target.value)} className="w-full border border-brand-sky/40 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sky">
+                  {skuList.map(s => <option key={s.SKU_ID} value={s.SKU_ID}>{s.SKU_ID} — {s.SKU_Name}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="text-xs text-gray-400 mb-1 block">Diskon ({discountPct}%)</label>
+                <input type="range" min={0} max={70} step={1} value={discountPct} onChange={e => setDiscountPct(Number(e.target.value))} className="w-full mt-2" />
+                <div className="flex justify-between text-xs text-gray-400 mt-1"><span>0%</span><span>35%</span><span>70%</span></div>
+              </div>
+            </div>
+
+            <button
+              onClick={run}
+              disabled={loading || !selectedSku}
+              className="bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition disabled:opacity-40"
+            >
+              {loading ? 'Menghitung...' : 'Jalankan Simulasi'}
+            </button>
+
+            {error && (
+              <p className="text-xs text-red-500 mt-3">{error}</p>
+            )}
           </div>
+
+          {/* Kanan 1/4 */}
+          {result && (
+            <div className="col-span-1 flex flex-col gap-2 h-auto">
+              <div className="p-1">
+                <StatCard
+                  label="Net Revenue Impact"
+                  value={fmt(result.summary.net_revenue_impact)}
+                  sub={
+                    result.summary.is_worth_it
+                      ? '✅ Worth it'
+                      : '⚠️ Tidak worth it'
+                  }
+                  accent={result.summary.is_worth_it}
+                />
+              </div>
+
+              <StatCard
+                label="Break-Even Discount"
+                value={
+                  result.summary.always_worth_it
+                    ? '70%+'
+                    : result.summary.break_even_discount_pct != null
+                      ? `${result.summary.break_even_discount_pct}%`
+                      : '0%'
+                }
+                sub={
+                  result.summary.always_worth_it
+                    ? 'Selalu worth it di range slider'
+                    : result.summary.break_even_discount_pct != null
+                      ? 'Batas atas discount profitable'
+                      : 'Sudah rugi sejak discount terkecil'
+                }
+                accent={
+                  result.summary.always_worth_it ||
+                  result.summary.break_even_discount_pct != null
+                }
+              />
+
+            </div>
+          )}
+
+        </div>
+      </Card>
 
           <Card>
             <div className="flex items-center justify-between mb-4">
@@ -1223,8 +1255,7 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Baseline</p>
-                  <p className="text-xs text-gray-400">Qty/hari</p>
+                  <p className="text-xs text-gray-400 mb-1">Forecasted Unit Sold</p>
                   <p className="text-xl font-bold text-gray-500 mt-1">{Math.round(result.sku_a_result.baseline_qty_daily).toLocaleString('id-ID')}</p>
                 </div>
                 <div className="flex flex-col items-center flex-shrink-0 w-14">
@@ -1233,8 +1264,7 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
                   </svg>
                 </div>
                 <div className="flex-1 bg-brand-blue rounded-xl p-4">
-                  <p className="text-xs text-brand-sky mb-1">Setelah Diskon</p>
-                  <p className="text-xs text-brand-sky/80">Qty/hari</p>
+                  <p className="text-xs text-brand-sky mb-1">Projected Units Sold (Dengan Diskon)</p>
                   <p className="text-xl font-bold text-white mt-1">{Math.round(result.sku_a_result.qty_new_daily).toLocaleString('id-ID')}</p>
                 </div>
                 <div className="flex-shrink-0 w-28 px-2 text-right">
@@ -1244,8 +1274,7 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Baseline</p>
-                  <p className="text-xs text-gray-400">Revenue/hari</p>
+                  <p className="text-xs text-gray-400 mb-1">Forecasted Revenue</p>
                   <p className="text-xl font-bold text-gray-500 mt-1">{fmtRev(result.sku_a_result.baseline_rev_daily)}</p>
                 </div>
                 <div className="flex flex-col items-center flex-shrink-0 w-14">
@@ -1254,12 +1283,11 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
                   </svg>
                 </div>
                 <div className="flex-1 bg-brand-blue rounded-xl p-4">
-                  <p className="text-xs text-brand-sky mb-1">Setelah Diskon</p>
-                  <p className="text-xs text-brand-sky/80">Revenue/hari</p>
+                  <p className="text-xs text-brand-sky mb-1">Projected Revenue (Dengan Diskon)</p>
                   <p className="text-xl font-bold text-white mt-1">{fmtRev(result.sku_a_result.rev_new_daily )}</p>
                 </div>
                 <div className="flex-shrink-0 w-28 text-right">
-                  <p className="text-xs text-gray-400">Uplift revenue</p>
+                  <p className="text-xs text-gray-400">Revenue</p>
                   <p className={`text-xs font-bold ${result.sku_a_result.rev_uplift_daily >= 0 ? 'text-green-600' : 'text-red-500'}`}>
                     {fmt(result.sku_a_result.rev_uplift_daily)}
                   </p>
@@ -1374,9 +1402,7 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
             }}
             cachedText={cachedInsight}
           />
-        </>
-      )}
-    </div>
+      </div>
   )
 }
 
