@@ -837,7 +837,7 @@ function AnalysisPage({ datasetId, onResult }) {
           summary: filteredSummary,
           top_pairs: filtered.slice(0, 5).map(r => ({
             branch: r.branch, period: r.year_month, category: r.category,
-            from: r.sku_a_name, to: r.sku_b_name, qty_loss_pct: r.did_ab_pct,
+            promoted_product: r.sku_a_name, cannibalized_product: r.sku_b_name, cannibalized_qty_loss_pct: r.did_ab_pct,
           })),
         }}
         cachedText={cachedInsight}
@@ -1232,7 +1232,7 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-4">
                   <p className="text-xs text-gray-400 mb-1">Forecasted Unit Sold</p>
-                  <p className="text-xl font-bold text-gray-500 mt-1">{Math.round(result.sku_a_result.baseline_qty_daily).toLocaleString('id-ID')}</p>
+                  <p className="text-xl font-bold text-gray-500 mt-1">{Math.round(result.sku_a_result.baseline_qty).toLocaleString('id-ID')}</p>
                 </div>
                 <div className="flex flex-col items-center flex-shrink-0 w-14">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94CFE5" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -1241,7 +1241,7 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
                 </div>
                 <div className="flex-1 bg-brand-blue rounded-xl p-4">
                   <p className="text-xs text-brand-sky mb-1">Projected Units Sold (Dengan Diskon)</p>
-                  <p className="text-xl font-bold text-white mt-1">{Math.round(result.sku_a_result.qty_new_daily).toLocaleString('id-ID')}</p>
+                  <p className="text-xl font-bold text-white mt-1">{Math.round(result.sku_a_result.qty_new).toLocaleString('id-ID')}</p>
                 </div>
                 <div className="flex-shrink-0 w-28 px-2 text-right">
                   <p className="text-xs text-gray-400">Total Units Sold</p>
@@ -1251,7 +1251,7 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-4">
                   <p className="text-xs text-gray-400 mb-1">Forecasted Revenue</p>
-                  <p className="text-xl font-bold text-gray-500 mt-1">{fmtRev(result.sku_a_result.baseline_rev_daily)}</p>
+                  <p className="text-xl font-bold text-gray-500 mt-1">{fmtRev(result.sku_a_result.baseline_rev)}</p>
                 </div>
                 <div className="flex flex-col items-center flex-shrink-0 w-14">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94CFE5" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -1260,11 +1260,11 @@ function SimulatorPage({ datasetId, hasCannibalization }) {
                 </div>
                 <div className="flex-1 bg-brand-blue rounded-xl p-4">
                   <p className="text-xs text-brand-sky mb-1">Projected Revenue (Dengan Diskon)</p>
-                  <p className="text-xl font-bold text-white mt-1">{fmtRev(result.sku_a_result.rev_new_daily )}</p>
+                  <p className="text-xl font-bold text-white mt-1">{fmtRev(result.sku_a_result.rev_new)}</p>
                 </div>
                 <div className="flex-shrink-0 w-28 text-right">
                   <p className="text-xs text-gray-400">Revenue</p>
-                  <p className={`text-xs font-bold ${result.sku_a_result.rev_uplift_daily >= 0 ? 'text-green-600' : 'text-red-500'}`}>
+                  <p className={`text-xs font-bold ${result.sku_a_result.rev_uplift >= 0 ? 'text-green-600' : 'text-red-500'}`}>
                     {fmt(result.sku_a_result.rev_uplift_daily)}
                   </p>
                 </div>
@@ -1434,7 +1434,9 @@ function AIInsightsPage({ datasetId, hasCannibalization, hasForecast }) {
       <div className="space-y-6">
         <div className="grid grid-cols-4 gap-4">
           <StatCard label="Total Rekomendasi" value={items.length} />
-          <StatCard label="Potensi Revenue Saved" value={stats.potential_revenue_saved || '—'} />
+          <StatCard label="Potensi Revenue Saved" value={<span className="text-2xl break-words">
+      {stats.potential_revenue_saved || '—'}
+    </span>} />
           <StatCard label="Produk Perlu Perhatian" value={stats.sku_at_risk || '—'} />
           <StatCard label="Confidence Level" value={stats.confidence || '95%'} accent />
         </div>

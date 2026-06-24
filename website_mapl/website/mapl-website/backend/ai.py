@@ -27,6 +27,9 @@ import json
 import os
 
 import requests
+import logging
+
+logger = logging.getLogger(__name__)
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-flash-lite-latest"
@@ -117,7 +120,7 @@ def _to_json(payload: dict) -> str:
 def build_prompt_combined(did: dict, matrix: dict, forecast: dict) -> str:
     """Susun prompt ringkas berisi hasil analisis untuk diringkas LLM."""
 
-    confirmed_pairs = did.get("confirmed", [])[:5]
+    significant_pairs = did.get("significant", [])[:5]
     top_forecast = forecast.get("per_sku", [])[:5]
 
     # Top pair berdasarkan cannib_coef tertinggi dari matrix (kalau tersedia)
@@ -132,12 +135,12 @@ def build_prompt_combined(did: dict, matrix: dict, forecast: dict) -> str:
 
     context = {
         "did_summary": did.get("summary"),
-        "top_confirmed_pairs": [
+        "top_significant_pairs": [
             {
                 "from": p["sku_a_name"], "to": p["sku_b_name"],
                 "branch": p["branch"], "did_ab": p["did_ab"],
                 "cannib_coef": p["cannib_coef"], "p_value": p["p_value"],
-            } for p in confirmed_pairs
+            } for p in significant_pairs
         ],
         "top_cannibalization_matrix_pairs": top_matrix_pairs,
         "forecast_summary": {
@@ -194,12 +197,28 @@ Tugas: Tulis 1 paragraf insight (3-5 kalimat, Bahasa Indonesia, nada profesional
 
 
 def build_prompt_analysis(payload: dict) -> str:
+    
     return f"""Kamu adalah analis bisnis retail FMCG. Berikut hasil analisis cannibalization (Difference-in-Differences) yang sedang dilihat user, sudah difilter sesuai pilihan branch/periode/kategori di dashboard:
 
 {_to_json(payload)}
 
-Tugas: Tulis 1 paragraf insight (3-5 kalimat, Bahasa Indonesia, profesional tapi mudah dipahami) yang menjelaskan pasangan SKU paling signifikan, di branch/periode apa cannibalization paling terasa, dan implikasi bisnisnya. Langsung paragraf naratif, JANGAN pakai format JSON atau bullet point."""
+PENTING:
+- Produk Promoted adalah SKU yang dipromosikan atau mengalami peningkatan aktivitas promosi.
+- Produk Terdampak adalah SKU yang mengalami penurunan penjualan akibat cannibalization.
+- Jika Produk A muncul sebagai Produk Promoted dan Produk B muncul sebagai Produk Terdampak, maka interpretasinya adalah promosi Produk A berasosiasi dengan penurunan penjualan Produk B.
+- Jangan membalik hubungan tersebut.
+- Jangan menyimpulkan adanya perpindahan konsumen secara langsung kecuali didukung data.
+- Jangan mengasumsikan peluncuran produk baru kecuali disebutkan dalam data.
+- Revenue Loss adalah total estimasi kehilangan revenue dari seluruh pasangan yang ditampilkan.
 
+Tugas:
+Tulis 1 paragraf insight (3-5 kalimat, Bahasa Indonesia, profesional dan mudah dipahami) yang:
+1. Menjelaskan pasangan cannibalization paling signifikan.
+2. Menjelaskan dampak revenue yang terlihat.
+3. Menjelaskan implikasi bisnis yang relevan.
+
+Jangan menggunakan bullet point atau format JSON.
+"""
 
 def build_prompt_simulator(payload: dict) -> str:
     return f"""Kamu adalah analis bisnis retail FMCG. Berikut hasil simulasi what-if pricing (perubahan diskon) untuk satu SKU, termasuk dampaknya ke SKU lain (cannibalization):
@@ -221,6 +240,7 @@ def generate_context_insight(context: str, payload: dict) -> dict:
     if not builder:
         return {"success": False, "error": f"Context insight '{context}' tidak dikenal."}
     prompt = builder(payload or {})
+    print(json.dumps(payload, indent=2, ensure_ascii=False))
     return _call_gemini(prompt, temperature=0.4, max_output_tokens=400)
 
 
