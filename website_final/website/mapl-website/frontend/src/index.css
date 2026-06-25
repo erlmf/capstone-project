@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #FFFAF4;
+  color: #1a1a1a;
+}
+
+/* Scrollbar tipis bertema */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #94CFE5;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background-color: #FFFAF4;
+}
